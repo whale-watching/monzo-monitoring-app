@@ -1,8 +1,8 @@
 <p align="center">
-  <a href="https://github.com/SashaRyder/MonzoDash/" target="blank"><img src="https://raw.githubusercontent.com/SashaRyder/MonzoDash/master/client/src/components/AppBar/monzodash.png?raw=true" width="120" alt="MonzoDash Logo" /></a>
+  <a href="https://github.com/whale-watching/monzo-monitoring-app/" target="blank"><img src="https://raw.githubusercontent.com/whale-watching/monzo-monitoring-app/master/client/src/components/AppBar/monzodash.png?raw=true" width="120" alt="Monzo Monitoring App Logo" /></a>
 </p>
 
-<p align="center">MonzoDash is a dockerised web app for monitoring and managing your Monzo bank account.</p>
+<p align="center">This application is a dockerised web app for monitoring and managing your Monzo bank account.</p>
 
 ## Features
 
@@ -35,13 +35,13 @@ version: "3.4"
 
 services:
   monzodash:
-    image: ghcr.io/sasharyder/monzodash:latest
+    image: ghcr.io/chenchrissh/monzodash:latest
     restart: unless-stopped
     links:
       - redis
       - mongo
     environment:
-      - TZ=Europe/London
+      - TZ=UTC-8
       - MONGO_USERNAME=${MONGO_USERNAME}
       - MONGO_PASSWORD=${MONGO_PASSWORD}
       - MONGO_HOST=${MONGO_HOST}
@@ -95,7 +95,3 @@ Once everything is setup and you've setup NGINX ect, just go to what you've set 
 ## Contributing
 
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
-
-## License
-
-[MIT](https://choosealicense.com/licenses/mit/)
